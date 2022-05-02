@@ -1,25 +1,24 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+
 import './App.css';
+import Header from './components/header/Header';
+import Bars from './components/Bars/Bars';
 
 function App() {
+   // initial array for random value 
+   const [randomHeights, setrandomHeights] = useState([]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="main">
+       <Header
+         randomHeights={randomHeights}
+        />
+       <Bars 
+         randomHeights={randomHeights} 
+         setrandomHeights={setrandomHeights}
+       />
     </div>
   );
 }
 
 export default App;
+

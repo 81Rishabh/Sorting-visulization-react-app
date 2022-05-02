@@ -1,0 +1,26 @@
+.bars-container  {
+    width: 100%;
+    padding : 1rem;
+    display : flex;
+    justify-content:center;
+    align-items : start;
+    flex-wrap: wrap;
+    margin: 0;
+}
+
+button.generator {
+  padding : .4rem;
+  width : 10%;
+  background : rgb(89, 63, 205);
+  border : none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.bars-wrapper {
+    width : 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

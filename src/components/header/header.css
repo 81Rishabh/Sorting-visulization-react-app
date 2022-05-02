@@ -1,0 +1,45 @@
+header {
+    background-color: rgb(244, 244, 244);
+    height: 5.5rem;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding : 0rem 4rem;
+}
+
+/* Navigatgion links */
+
+ul.links {
+    display: flex;
+}
+
+ul li.list-item {
+    list-style-type: none;
+    margin : 0rem 1rem;
+    font-size : .8rem;
+}
+ 
+ul li button{
+    background: transparent;
+    border: 2px solid rgba(207, 206, 206, 0.977);
+    padding : .5rem .5rem;
+    border-radius: 1px;
+    cursor: pointer;
+    transition: all .1s ease-in-out;
+}
+
+li button:hover {
+   color: blueviolet;
+   border: 2px solid blueviolet;
+}
+
+#speed-category {
+    cursor: pointer;
+    padding: .55rem;
+    border: none;
+    transition: all .4s linear;
+    background-color: white;
+}
