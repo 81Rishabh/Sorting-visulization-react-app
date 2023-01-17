@@ -1,10 +1,21 @@
 import React   from 'react';
 import './header.css';
-import Navbar from './Navbar';
-
 function Header({
-  randomHeights
+  show,
+  setShowSidebar,
+  sidebarRef
 }) {
+
+  function handleSideChange() {
+     if(!show) {
+       sidebarRef.current.style.transform = 'translateX(0px)';
+       setShowSidebar(true);
+      }
+      else {
+        sidebarRef.current.style.transform = 'translateX(-400px)';
+        setShowSidebar(false);
+     }
+  }
   return (
     <React.Fragment>
         <header>
@@ -17,7 +28,13 @@ function Header({
                 <rect x="10" y="5" width="3" height="21" fill="#471EEC"/>
                 </svg>
             </div> 
-            <Navbar randomHeights={randomHeights}/>
+            <div className="hamburger-menu" onClick={handleSideChange}>
+              <svg width="23" height="23" fill="none" stroke="currentColor"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 12h18"></path>
+              <path d="M3 6h18"></path>
+              <path d="M3 18h18"></path>
+             </svg>
+            </div>
         </header>
     </React.Fragment>
   )
