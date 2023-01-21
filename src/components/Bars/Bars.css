@@ -69,10 +69,11 @@ button.generator:hover {
         transform: translateX(-400px);
         width: 70%;
         position: fixed;
-        top: 14%;
+        top: 10%;
         left: 0;
         background-color : #fff;
         z-index: 11;
+        height: 100%;
     }
      
     .bars-container  {
