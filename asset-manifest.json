@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/81Rishabh/Sorting-visulization-react-app/static/css/main.12b9d9aa.css",
+    "main.js": "/81Rishabh/Sorting-visulization-react-app/static/js/main.54f8c07a.js",
+    "index.html": "/81Rishabh/Sorting-visulization-react-app/index.html",
+    "main.12b9d9aa.css.map": "/81Rishabh/Sorting-visulization-react-app/static/css/main.12b9d9aa.css.map",
+    "main.54f8c07a.js.map": "/81Rishabh/Sorting-visulization-react-app/static/js/main.54f8c07a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.12b9d9aa.css",
+    "static/js/main.54f8c07a.js"
+  ]
+}
