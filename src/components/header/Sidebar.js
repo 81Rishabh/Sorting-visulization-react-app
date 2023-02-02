@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Navbar({ randomHeights, setShowSidebar }) {
+function Navbar({ randomHeights }) {
   const COMPARSION_COLOR = "blue";
   const SORTED_COLOR = "lightgreen";
   const DEFAULT = "lightblue";
@@ -155,18 +155,20 @@ function Navbar({ randomHeights, setShowSidebar }) {
     disableButtons(e.target);
     const n = randomHeights.length;
     const array_bars = document.querySelectorAll(".bars");
+
     addStyle(e);
    
     for (let i = 0; i < n; i++) {
       setTimeout(() => {
-        let min = i;
+        let minimum = i;
         array_bars[i].style.backgroundColor = CURRENT;
 
         for (let j = i + 1; j < n; j++) {
           setTimeout(() => {
             array_bars[j].style.backgroundColor = COMPARSION_COLOR;
-            if (randomHeights[j] < randomHeights[min]) {
-              min = j;
+            
+            if (randomHeights[minimum] > randomHeights[j]) {
+              minimum = j;
               array_bars[j].style.backgroundColor = SORTED_COLOR;
             }
 
@@ -179,13 +181,13 @@ function Navbar({ randomHeights, setShowSidebar }) {
 
         setTimeout(() => {
           //  swap values 
-          let temp = randomHeights[min];
-          randomHeights[min] = randomHeights[i];
+          let temp = randomHeights[minimum];
+          randomHeights[minimum] = randomHeights[i];
           randomHeights[i] = temp;
 
           // swap the heights
           array_bars[i].style.height = randomHeights[i] + "px";
-          array_bars[min].style.height = randomHeights[min] + "px";
+          array_bars[minimum].style.height = randomHeights[minimum] + "px";
           array_bars[i].style.backgroundColor = SORTED_COLOR;
         }, time * n);
 
