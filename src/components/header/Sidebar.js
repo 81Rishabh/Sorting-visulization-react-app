@@ -4,7 +4,7 @@ function Navbar({ randomHeights }) {
   const COMPARSION_COLOR = "blue";
   const SORTED_COLOR = "lightgreen";
   const DEFAULT = "lightblue";
-  const CURRENT = "yellow"
+  // const CURRENT = "yellow"
   const [time, setTime] = useState(1);
 
   // spped handler
@@ -49,8 +49,7 @@ function Navbar({ randomHeights }) {
     e.target.style.color = "#a84de9";
 
     const buttons = document.querySelectorAll('.list-item button');
-    Array.from(buttons).filter(btn => e.target !== btn).forEach(btn => {
-      btn.setAttribute('disabled' , false);
+    Array.from(buttons).forEach(btn => {
       btn.style.cursor = 'pointer';
       btn.style.opacity = '1';
     });
@@ -58,7 +57,7 @@ function Navbar({ randomHeights }) {
 
   //  bubble Sort
   function bubbleSort(e) {
-    disableButtons(e.target);
+    // disableButtons(e.target);
     const n = randomHeights.length;
     const array_bars = document.querySelectorAll(".bars");
     addStyle(e);
@@ -109,7 +108,7 @@ function Navbar({ randomHeights }) {
 
   //  insertionSort
   function insertionSort(e) {
-    disableButtons(e.target);
+    // disableButtons(e.target);
     const n = randomHeights.length;
     const array_bars = document.querySelectorAll(".bars");
     addStyle(e);
@@ -151,56 +150,56 @@ function Navbar({ randomHeights }) {
   }
 
   // selection sort
-  function selectionSort(e) {
-    disableButtons(e.target);
-    const n = randomHeights.length;
-    const array_bars = document.querySelectorAll(".bars");
+  // function selectionSort(e) {
+  //   disableButtons(e.target);
+  //   const n = randomHeights.length;
+  //   const array_bars = document.querySelectorAll(".bars");
 
-    addStyle(e);
+  //   addStyle(e);
    
-    for (let i = 0; i < n; i++) {
-      setTimeout(() => {
-        let minimum = i;
-        array_bars[i].style.backgroundColor = CURRENT;
+  //   for (let i = 0; i < n; i++) {
+  //     let minimum = i;
+  //     setTimeout(() => {
+  //       array_bars[i].style.backgroundColor = CURRENT;
 
-        for (let j = i + 1; j < n; j++) {
-          setTimeout(() => {
-            array_bars[j].style.backgroundColor = COMPARSION_COLOR;
+  //       for (let j = i + 1; j < n; j++) {
+  //         setTimeout(() => {
+  //           array_bars[j].style.backgroundColor = COMPARSION_COLOR;
             
-            if (randomHeights[minimum] > randomHeights[j]) {
-              minimum = j;
-              array_bars[j].style.backgroundColor = SORTED_COLOR;
-            }
+  //           if (randomHeights[minimum] > randomHeights[j]) {
+  //             minimum = j;
+  //             array_bars[j].style.backgroundColor = SORTED_COLOR;
+  //           }
 
-            // swaping valus
-            setTimeout(() => {
-              array_bars[j].style.backgroundColor = DEFAULT;
-            }, time / 2);
-          }, (j * time));
-        }
+  //           // swaping valus
+  //           setTimeout(() => {
+  //             array_bars[j].style.backgroundColor = DEFAULT;
+  //           }, time / 2);
+  //         }, (j * time));
+  //       }
 
-        setTimeout(() => {
-          //  swap values 
-          let temp = randomHeights[minimum];
-          randomHeights[minimum] = randomHeights[i];
-          randomHeights[i] = temp;
+  //       setTimeout(() => {
+  //         //  swap values 
+  //         let temp = randomHeights[minimum];
+  //         randomHeights[minimum] = randomHeights[i];
+  //         randomHeights[i] = temp;
 
-          // swap the heights
-          array_bars[i].style.height = randomHeights[i] + "px";
-          array_bars[minimum].style.height = randomHeights[minimum] + "px";
-          array_bars[i].style.backgroundColor = SORTED_COLOR;
-        }, time * n);
+  //         // swap the heights
+  //         array_bars[i].style.height = randomHeights[i] + "px";
+  //         array_bars[minimum].style.height = randomHeights[minimum] + "px";
+  //         array_bars[i].style.backgroundColor = SORTED_COLOR;
+  //       }, time * n);
 
-        // check is array is sorted
-        if (i === n - 2) { removeStyle(e) }
-      }, i * time * n);
-    }
-  }
+  //       // check is array is sorted
+  //       if (i === n - 2) { removeStyle(e) }
+  //     }, i * time * n);
+  //   }
+  // }
 
 
   // merge sort
   function mergeSort(e) {
-    disableButtons(e.target);
+    // disableButtons(e.target);
     const n = randomHeights.length;
     const array_bars = document.querySelectorAll(".bars");
     const animations = [];
@@ -316,14 +315,14 @@ function Navbar({ randomHeights }) {
   }
 
   // get the buttons
-  function disableButtons(button) {
-    const buttons = document.querySelectorAll('.list-item button');
-    Array.from(buttons).filter(btn => button !== btn).forEach(btn => {
-      btn.setAttribute('disabled' , true);
-      btn.style.cursor = 'not-allowed';
-      btn.style.opacity = '.7';
-    });
-  }
+  // function disableButtons(button) {
+  //   const buttons = document.querySelectorAll('.list-item button');
+  //   Array.from(buttons).filter(btn => button !== btn).forEach(btn => {
+  //     btn.setAttribute('disabled' , true);
+  //     btn.style.cursor = 'not-allowed';
+  //     btn.style.opacity = '.7';
+  //   });
+  // }
 
 
 
@@ -337,11 +336,6 @@ function Navbar({ randomHeights }) {
       <li className="list-item">
         <button type="button" className="InsertionSort" onClick={insertionSort}>
           Insertion Sort
-        </button>
-      </li>
-      <li className="list-item">
-        <button type="button" className="SelectionSort" onClick={selectionSort}>
-          Selection Sort
         </button>
       </li>
       <li className="list-item">
@@ -364,3 +358,10 @@ function Navbar({ randomHeights }) {
 }
 
 export default Navbar;
+
+
+//  <li className="list-item">
+//         <button type="button" className="SelectionSort" onClick={selectionSort}>
+//           Selection Sort
+//         </button>
+//       </li>

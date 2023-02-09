@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Navbar from "../header/Sidebar";
 import "./Bars.css";
 
@@ -7,12 +7,10 @@ const BARS_COUNT = 100;
 const PRIMARY_COLOR = "lightblue";
 
 function Bars(props) {
- 
-  //  whenenver component gets render bar will generate
-  useEffect(() => {
-      resetArray();
-  }, []);  
   
+
+ 
+
   function resetArray() {
     const array = [];
     for (let i = 0; i < BARS_COUNT; i++) {
@@ -29,8 +27,6 @@ function Bars(props) {
     }
   }
 
-  
- 
 
   return (
     <div className="bars-container">
@@ -53,7 +49,8 @@ function Bars(props) {
                     width : '5px',
                     backgroundColor : PRIMARY_COLOR,
                     margin: '1px',
-                    position: 'relative'
+                    position: 'relative',
+                    transition : 'height .2s ease-in-out'
                   }}
                 >
                </div>

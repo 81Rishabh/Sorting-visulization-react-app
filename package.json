@@ -1,5 +1,6 @@
 {
   "name": "sorting-visulization",
+  "homepage": "https://github.com/81Rishabh/Sorting-visulization-react-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -37,6 +38,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "homepage": "https://github.com/81Rishabh/Sorting-visulization-react-app"
+  }
 }
